@@ -13,3 +13,9 @@ These paths are using the Gemini board FW locations
 ** fly_macros.cfg defines some gcode macros including the homing functions.
 ** mainsail.cfg is a simlink to /home/fly/mainsail-config/client.cfg
 ** fluidd.cfg is a simlink to /home/fly/fluidd-config/client.cfg
+
+
+### Extras
+
+* The LEDs:
+** klipper/klippy/extras/led_effect.py is a simlinkk to /home/fly/klipper-led_effect/src/led_effect.py
