@@ -18,4 +18,4 @@ These paths are using the Gemini board FW locations
 ### Extras
 
 * The LEDs:
-** klipper/klippy/extras/led_effect.py is a simlinkk to /home/fly/klipper-led_effect/src/led_effect.py
+** klipper/klippy/extras/led_effect.py is a simlink to /home/fly/klipper-led_effect/src/led_effect.py

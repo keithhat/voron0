@@ -52,7 +52,6 @@ Flashing fimware main indicate success and failure; this was found to be ok but 
 
 # Current Status
 ## Blockers for printing
-* Extruder is currently slipping, disassemble and check path.
 * Extruder calibration / esteps
 * Retude PID for hotend, now has fan.
 * Bed Screws Adjust macro working - to help with bed levelling
@@ -81,3 +80,13 @@ Flashing fimware main indicate success and failure; this was found to be ok but 
 * Look at accelerometer and input shaping.
 * Klipper LED as status - may need to setup Klipper-LED effects
 * Camera - ideally mounted on top of z extruction. This may need mjpg-streamer + www-mjpgstreamer
+
+
+
+# LED Installations
+https://docs.siboor.com/other-products/led-effect-notes/installing-led-effects-software
+
+cd ~
+git clone https://github.com/julianschill/klipper-led_effect.git
+cd klipper-led_effect
+./install-led_effect.sh
