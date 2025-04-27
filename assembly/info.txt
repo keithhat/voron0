@@ -1,0 +1,290 @@
+To access printer found best in chrome: http://192.168.7.60/#/
+
+TODO:
+	1. Continue with PDF (p21/30)
+		- Extruder tuning
+		- Setup Cura including Octoprint
+
+	2. Continue with: https://jjarrard.github.io/Gemini-V3-Flash-Voron-V0/installation/
+		- Anything on z-offset
+		- Anything on z-homing
+		- Anything on Z stop at bottom but home to top??
+
+	3. Redo PIF Tuning
+	4. Initial test print
+
+	- Accelerometer - input shaping
+
+	- Backup my config files -> My GIT
+	- Cleanup notes and host somewhere -> my git
+
+STRETCH:
+
+	- Image SD card then try updating
+
+	- Try copying configs of other SD card
+
+	- Check BED LED - old FW used it
+		https://docs.siboor.com/other-products/led-effect-notes/installing-led-effects-software
+
+
+FUTURE:
+	- See if any recommended USB cameras
+		- Missing one of my logitect; did try 2 other
+
+=======
+
+Info:
+	- Screen speed: 115200
+	- IP: 192.168.7.60
+		I believe it only supports 2.4GHz WiFi
+			/etc/NetworkManager/system-connections/Keithino.nmconnection 
+	- Default password was: mellow -> speedy
+		https://docs.siboor.com/siboor-0.2-r1-aug/the-build/initial-startup
+		User: fly
+	- PID Tuning: $ PID_CALIBRATE HEATER=heater_bed TARGET=85
+		// PID parameters: pid_Kp=64.897 pid_Ki=3.576 pid_Kd=294.468
+	- PID_CALIBRATE HEATER=extruder TARGET=210
+		// PID parameters: pid_Kp=29.663 pid_Ki=1.676 pid_Kd=131.259
+
+	- FANS care about +/- escpecially hotend fan
+
+
+Follow: https://docs.siboor.com/siboor-0.2-r1-aug/the-build/initial-startup
+
+
+
+====
+	Input shaper
+		Canuck creator had a crash course --> Aborted will find a Gemini based on
+
+		Install:
+			~/klippy-env/bin/pip install -v numpy # -> Already existed
+			sudo apt install python3-numpy python3-matplotlib # -> Already existed. NB video omitted python3
+
+		STOPPPED when wanted to download and update klipper
+====
+
+
+
+
+Image:
+	System Image:
+		- https://mellow.klipper.cn/en/docs/ResDownload/system-img/fly-Gemini/?persistLocale=true
+			default user: fly
+			password: mellow
+
+		- Do NOT update
+			Due to server issues, please do not update the system or klipper arbitrarily
+			Please download FLY OS system, installing the original Armbian is too difficult and not recommended
+
+		- Follow from: https://mellow.klipper.cn/en/docs/ResDownload/system-img/fly-Gemini
+			cd klipper
+			make clean
+			make menuconfig
+				> setup to match
+
+
+		- FYI Serial: /dev/serial/by-id/usb-Klipper_stm32f405xx_28003D001547323330373434-if00
+			> Config file at: /home/fly/printer_data/config/printer.cfg
+
+
+On MBP
+	- Connecting USB cable did power on board 
+		- Don't power through USB hub - used dock
+		- This was USB C closer to ethernet port 'USB3'
+	- Detect Port:
+		ls /dev/*usb*
+		/dev/cu.usbserial-230	/dev/tty.usbserial-230
+		Note:
+			- From: https://pbxbook.com/other/mac-tty.html#screen
+			  Suggest using cu:
+				TTY devices are for calling into UNIX systems.
+				CU (Call-Up) devices are for calling out from them (eg, modems).
+				We want to call-out from our Mac, so /dev/cu.* is the correct device to use.
+
+				The technical difference is that /dev/tty.* devices will wait (or listen) for DCD (data-carrier-detect), eg, someone calling in, before responding. /dev/cu.* devices do not assert DCD, so they will always connect (respond or succeed) immediately.
+			- However ChatCPT screen example uses tty
+
+		https://github.com/Jjarrard/Gemini-V3-Flash-Voron-V0/tree/main/Config%20Files
+
+	- Used screen connecting to cu port at 115200
+		screen /dev/cu.usbserial-230 115200
+
+		This will drop into a console shell: root@flygemin
+		To exit: Ctrl+A + Ctrl + \
+
+		- I did a reboot and noticed
+			[FAILED] Failed to start Resets System Activity Logs.
+				See 'systemctl status sysstat.service' for details.
+
+		- From manual: nmtui
+			Active a connection
+				WiFi:	I could only see the 2.4 GHz option
+					keithino
+				Suggest using Ethernet if need higher speed, especially in the study
+			Set Hostname:
+				voron0201
+		- Reserved:
+			MAC: 1C-78-39-0B-34-EF
+			Keithino: 192.168.7.60
+				(Unreserved was: 192.168.7.124)
+
+		- Initially Confirmed can access fluid in web browser: 192.168.7.60
+			mcu 'display': Unable to connect
+			Once the underlying issue is corrected, use the
+			"FIRMWARE_RESTART" command to reset the firmware, reload the
+			config, and restart the host software.
+			Error configuring printer
+
+			At this stage the Voron was powered over USBC
+
+		- Attempt to update
+			apt update
+			apt upgrade
+			> This Broke Klipper / mainsail. Will return to this
+
+	- Front Display
+		- FYI There is a similar HW (LDO Motors v0.1) at: https://www.youtube.com/watch?v=a66HdK4VCd8
+			- Confirmed the wiring is red-white-green-black; this video swaps data pins swapped ~10min
+		- With multimeter I confirmed my cable was pinned correctly
+		- Need 3.3v boot jumper to enter boot mode
+		- Confirmed lsusb shows up device (diff b4 and after connected):
+			- Bus 007 Device 002: ID 0483:df11 STMicroelectronics STM Device in DFU Mode
+		- From: https://docs.siboor.com/siboor-0.2-r1-aug/the-build/initial-startup
+			cd ~/klipper/
+			make -j4 flash FLASH_DEVICE=0483:df11
+
+			< This had failed to validate messages. Was pushing 23204 bytes >
+			Note:
+				1. https://community.particle.io/t/solved-dfu-util-error-during-download-get-status-error-writing-firmware/13329
+
+				dfu-util has known issue where it both reports success and failure. (See lines mentioning done and success, and the last line mentioning error.) You can ignore this error, the tool is lying to yo
+
+			Similar with:
+				make flash FLASH_DEVICE=0483:df11
+				Also with Sudo
+			sudo reboot
+			< I then removed jumper and pressed display reset PB and it all worked :) >
+
+
+STRETCH:
+	- Look at any dmesg warnigs
+		 dmesg --level=err,warn
+	- Suggest do NOT do apt updates on this image: https://www.reddit.com/r/VORONDesign/comments/1evy21o/how_do_i_get_a_fly_gemini_v3_working/
+		> BBT Octopus and a Pi5
+		- Did have issues getting passed uboot when did
+			sudo apt-get --with-new-pkgs upgrade <pkg>
+				For: linux-dtb-current-sunxi64 linux-image-current-sunxi64
+				Trying to avoid The following packages have been kept back:
+
+# Future:
+	- Mods others have done
+		https://www.wirewd.com/make/voron0v2
+
+
+
+
+Notes:
+	- dfu-util error attempting to flash front display
+			https://docs.siboor.com/siboor-0.2-r1-aug/the-build/initial-startup
+			cd ~/klipper/
+			make -j4 flash FLASH_DEVICE=0483:df11
+		The make command did have a sudo prompt but even then seem to not be able to validate
+		This was with jumper connected.
+			$ make -j4 flash FLASH_DEVICE=0483:df11
+			  Creating symbolic link out/board
+			  Building out/autoconf.h
+			  Compiling out/src/sched.o
+			  ...
+			  Preprocessing out/src/generic/armcm_link.ld
+			  Building out/compile_time_request.o
+			Version: v0.10.0-391-g722ad4a1-dirty-20250329_224958-voron0201
+			  Linking out/klipper.elf
+			  Creating hex file out/klipper.bin
+			  Flashing out/klipper.bin to 0483:df11
+			sudo dfu-util -d ,0483:df11 -R -a 0 -s 0x8000000:leave -D out/klipper.bin
+
+			[sudo] password for fly: 
+			dfu-util 0.9
+
+			Copyright 2005-2009 Weston Schmidt, Harald Welte and OpenMoko Inc.
+			Copyright 2010-2016 Tormod Volden and Stefan Schmidt
+			This program is Free Software and has ABSOLUTELY NO WARRANTY
+			Please report bugs to http://sourceforge.net/p/dfu-util/tickets/
+
+			dfu-util: Invalid DFU suffix signature
+			dfu-util: A valid DFU suffix will be required in a future dfu-util release!!!
+			Opening DFU capable USB device...
+			ID 0483:df11
+			Run-time device DFU version 011a
+			Claiming USB DFU Interface...
+			Setting Alternate Setting #0 ...
+			Determining device status: state = dfuERROR, status = 10
+			dfuERROR, clearing status
+			Determining device status: state = dfuIDLE, status = 0
+			dfuIDLE, continuing
+			DFU mode device DFU version 011a
+			Device returned transfer size 2048
+			DfuSe interface name: "Internal Flash  "
+			Downloading to address = 0x08000000, size = 23204
+			Download	[=========================] 100%        23204 bytes
+			Download done.
+			File downloaded successfully
+			dfu-util: Error during download get_status
+
+			Failed to flash to 0483:df11: Error running dfu-util
+
+			If the device is already in bootloader mode it can be flashed with the
+			following command:
+			  make flash FLASH_DEVICE=0483:df11
+			  OR
+			  make flash FLASH_DEVICE=1209:beba
+
+			If attempting to flash via 3.3V serial, then use:
+			  make serialflash FLASH_DEVICE=0483:df11
+
+			make: *** [src/stm32/Makefile:82: flash] Error 255
+		  make serialflash FLASH_DEVICE=0483:df11
+
+		make: *** [src/stm32/Makefile:82: flash] Error 255
+
+
+
+	- Boot Messages:
+		- Had note: "sudo apt update && sudo apt install armbian-config"
+			Running thishad: W: GPG error: https://github.armbian.com/configng stable InRelease: The following signatures couldn't be verified because the public key is not available: NO_PUBKEY 93D6889F9F0E78D5
+
+			E: The repository 'https://github.armbian.com/configng stable InRelease' is not signed.
+
+		- From https://forum.armbian.com/topic/23465-apt-get-update-fails-with-public-key-errors/page/2/#comment-172106
+			sudo wget https://apt.armbian.com/armbian.key -O key
+			sudo gpg --dearmor < key | sudo tee /usr/share/keyrings/armbian.gpg > /dev/null
+			sudo chmod go+r /usr/share/keyrings/armbian.gpg
+			sudo echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/armbian.gpg] http://apt.armbian.com $(lsb_release -cs) main  $(lsb_release -cs)-utils  $(lsb_release -cs)-desktop" | sudo tee /etc/apt/sources.list.d/armbian.list
+			sudo apt update
+
+
+Resources:
+	Unsure if have flagged above
+
+		- Initial setup:
+			- https://docs.siboor.com/siboor-0.2-r1-aug/the-build/initial-startup
+			- https://docs.vorondesign.com/build/startup/
+
+		- Images and configs:
+			- https://mellow.klipper.cn/en/docs/ResDownload/system-img/fly-Gemini/?persistLocale=true
+			- https://jjarrard.github.io/Gemini-V3-Flash-Voron-V0/installation/
+			- Gemini Board CFG: https://mellow-3d.github.io/fly-gemini_v3_klipper_mcu_config.html#uncomment-the-include-for-the-fly-gemini-v3-aliases-file
+			- Debugging: https://docs.vorondesign.com/community/troubleshooting/eddie/klipper_common_errors.html
+
+		- Kirigami Bed: https://docs.siboor.com/other-products/v0-krigami-bed
+			- https://docs.siboor.com/other-products/led-effect-notes/installing-led-effects-software
+
+		- Misc Voron:
+			- https://docs.vorondesign.com/build/software/
+			- https://github.com/VoronDesign/Voron-0/tree/Voron0.2r1/Firmware
+
+		- Potential upgrades:
+			- https://github.com/Lzhikai/SIBOOR-Voron-0.2/blob/main/expander/README.md
+			- https://github.com/Lzhikai/SIBOOR-Voron-0.2/tree/main

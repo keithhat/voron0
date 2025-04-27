@@ -18,9 +18,9 @@ Dragon Burner:
 	- Bom (Extracted)
 		- FANS:
 			- Part Cooling: 2x 4010 24V blower fans
-				- Recommended: https://www.aliexpress.com/item/32799324058.html 	AUD 5.05
+				- Recommended: https://www.aliexpress.com/item/32799324058.html 	(24V Hydraulic 2PIN) AUD 5.05
 			- Hotend Cooling: 1x 3010 24V
-				- Recommended: https://www.aliexpress.com/item/1005002857100082.html AUD $ 8.78
+				- Recommended: https://www.aliexpress.com/item/1005002857100082.html ( 24V Sleeve 2PIN) AUD $ 12.79
 		- LEDs:
 			- 3x LEDs for lgoo and nozzle lights (optional)
 				- Can be a mixture of NeoPixels and/or Sequins (nozzle??)
@@ -28,6 +28,8 @@ Dragon Burner:
 				- Links I found:
 					- https://www.aliexpress.com/item/1005007646205279.html AUD 1.59 (need to solder/crimp myself)
 					- https://www.aliexpress.com/item/1005006046634379.htm AUD 10.59 looks socketed prepared for StealthBurner
+					- Sequins: https://www.aliexpress.com/item/1005006023213341.html AUD 1.59 - DIY
+					- Neopixel Sequins: https://www.aliexpress.com/item/1005006220336798.html AUD 1.83
 		Dragon SF and HF
 		Dragon + Volcano (Rapido HF mount)
 		Dragonfly BMO

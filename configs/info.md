@@ -19,3 +19,12 @@ These paths are using the Gemini board FW locations
 
 * The LEDs:
 ** klipper/klippy/extras/led_effect.py is a simlink to /home/fly/klipper-led_effect/src/led_effect.py
+
+## Pluggins
+### Neopixel LEDs - ie BED Logo
+Installed from: https://docs.siboor.com/other-products/led-effect-notes/installing-led-effects-software
+
+cd ~
+git clone https://github.com/julianschill/klipper-led_effect.git
+cd klipper-led_effect
+./install-led_effect.sh
