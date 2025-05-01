@@ -24,7 +24,55 @@ These paths are using the Gemini board FW locations
 ### Neopixel LEDs - ie BED Logo
 Installed from: https://docs.siboor.com/other-products/led-effect-notes/installing-led-effects-software
 
+```
 cd ~
 git clone https://github.com/julianschill/klipper-led_effect.git
 cd klipper-led_effect
 ./install-led_effect.sh
+```
+
+## Crowsnest for USB camera
+* It seems crowsnest deprecated MJPEG-streamer. Repo is at:  https://github.com/mainsail-crew/crowsnest
+	* These command were from: https://www.youtube.com/watch?v=7A4wIKLQQoM&ab_channel=PrintsLeo3D
+		* My image already had a ~/crowsnest so I commented out the first few lines
+		```
+		# cd ~
+		# git clone https://github.com/mainsail-crew/crowsnest.git
+		cd ~/crowsnest
+		sudo make install
+		# This did some apt updates - I had to do Armbian fix below
+		```
+	* Looking at error log (/home/fly/printer_data/logs/crowsnest.log) allowed me to setup crowsnest.conf - was using incorrect device
+	* Needed to restart crowsnest then klipper.
+	* Note: Only gettig around 5fps
+
+# Apt Fixes
+
+## Armbian key issues
+
+I had the following message during apt update:
+```
+sudo apt update
+Get:1 https://github.armbian.com/configng stable InRelease [3,992 B]
+Err:1 https://github.armbian.com/configng stable InRelease
+  The following signatures couldn't be verified because the public key is not available: NO_PUBKEY 93D6889F9F0E78D5
+Hit:2 http://repo.jing.rocks/armbian-apt bullseye InRelease
+Hit:3 https://mirrors.tuna.tsinghua.edu.cn/debian bullseye InRelease
+Hit:4 https://mirrors.tuna.tsinghua.edu.cn/debian bullseye-updates InRelease
+Hit:5 https://mirrors.tuna.tsinghua.edu.cn/debian bullseye-backports InRelease
+Hit:6 https://mirrors.tuna.tsinghua.edu.cn/debian-security bullseye-security InRelease
+Reading package lists... Done
+W: GPG error: https://github.armbian.com/configng stable InRelease: The following signatures couldn't be verified because the public key is not available: NO_PUBKEY 93D6889F9F0E78D5
+E: The repository 'https://github.armbian.com/configng stable InRelease' is not signed.
+N: Updating from such a repository can't be done securely, and is therefore disabled by default.
+N: See apt-secure(8) manpage for repository creation and user configuration details.
+```
+
+This was resolved by adding a key (found these looking though foroms from above error)
+```
+sudo wget https://apt.armbian.com/armbian.key -O key
+sudo gpg --dearmor < key | sudo tee /usr/share/keyrings/armbian.gpg > /dev/null
+sudo chmod go+r /usr/share/keyrings/armbian.gpg
+sudo echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/armbian.gpg] http://apt.armbian.com $(lsb_release -cs) main  $(lsb_release -cs)-utils  $(lsb_release -cs)-desktop" | sudo tee /etc/apt/sources.list.d/armbian.list
+sudo apt update
+```

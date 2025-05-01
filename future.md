@@ -33,10 +33,11 @@ This is a backlog of tasks I'd like to improve. It was started after initial mec
 
 ## Stretch
 * Klipper LED as status - Something for finished, Printing and loading
-* Camera - ideally mounted on top of z extruction. This may need mjpg-streamer + www-mjpgstreamer
+* Camera - mount on top of z extruction.
     * I bought: https://www.amazon.com.au/dp/B09KHHN8B3
-    * [3 Siboor v0.2 Supplementary](https://github.com/Lzhikai/SIBOOR-Voron-0.2/blob/main/supplementary/SIBOOR%20V0.2%20Supplementary%20Manual.pdf) p30 had info (for Siboor image)
-        * Same info in [4 Siboor0.2-Supplementary.pdf](https://github.com/Lzhikai/SIBOOR-Voron-0.2/blob/main/supplementary/SIBOOR0.2-supplementary.pdf)
+    * Have this working with crowsnest - think deprecates mjpg-streamer + www-mjpgstreamer
+
+
 * Look at accelerometer and input shaping.
 * Check if need to tune: Pressure Advance, Smooth Time
 
