@@ -4,21 +4,17 @@ This is a backlog of tasks I'd like to improve. It was started after initial mec
 
 # Current Status
 ## Blockers for printing
-* Check sensitivity for sensorless homing for x/y -> Less jerky finding end
-    * https://docs.siboor.com/siboor-0.2-r1-aug/the-build/initial-startup-checks 
-    * https://docs.vorondesign.com/tuning/sensorless.html
-    * Read rest of sections to ensure haven't missed anything
 
 * Re-level bed and setup z-home (z-offset) - with heated bed and hotend
-    * Guide: https://docs.vorondesign.com/build/startup/#pid-tune-bed--hotend mentions Z_ENDSTOP_CALIBRATE
-    * Maybe also: https://docs.siboor.com/siboor-0.2-r1-aug/the-build/initial-startup-checks#calibrate-the-z0-position
+    * Initially look at: https://docs.siboor.com/siboor-0.2-r1-aug/the-build/initial-startup-checks#calibrate-the-z0-position
+    * Then continue with anything else in Guide: https://docs.vorondesign.com/build/startup/#z-endstop-location-v0 mentions Z_ENDSTOP_CALIBRATE - think also wants cold with paper.
     * Check probing all points is 120; was 121 when cold.
     * See if can adjust bed height to avoid initial 'hacks'
-    * https://docs.vorondesign.com/build/startup/#z-endstop-location-v0  Says do COLD with paper
     * How was the bottom endstop set? Add it if possible
 
 * Look at running/fixing: v0: BED_SCREWS_ADJUST - MAY help with bed levelling
-    * Guide: https://docs.vorondesign.com/build/startup/#pid-tune-bed--hotend
+    * Initially look at: https://docs.siboor.com/siboor-0.2-r1-aug/the-build/initial-startup-checks#bed-screws-adjust
+    * Then continue with anythign else in Guide: https://docs.vorondesign.com/build/startup/#bed-screws-v0
     * Hotend with stainless steel and fan now working
     * On printer think:
         * /home/fly//klipper/klippy/extras/bed_screws.py
@@ -26,20 +22,27 @@ This is a backlog of tasks I'd like to improve. It was started after initial mec
         * /home/fly//KlipperScreen/panels/bed_mesh.py
         * /home/fly//klipper/klippy/extras/bed_mesh.py
 
-* Calibration Prints - ie cube
-  * Check can wirelessly send to printer
+## Final setup before doing generic prints
+* Calibration Prints
+  * cube https://docs.siboor.com/siboor-0.2-r1-aug/the-build/slicer-setup#slice-the-3d-model
+      * Check can wirelessly send to printer
+  * Maybe more at: https://docs.siboor.com/siboor-0.2-r1-aug/tuning-guides (some of these are below in stretch)
+  * Teching Tech or makers muse likely have others; retraction, overhangs etc
 * Move printer to next to ender3
+* Look at steps to apply for serial.
 
 
 ## Stretch
+* Look at accelerometer and input shaping.
+  * Resonances: https://docs.siboor.com/siboor-0.2-r1-aug/tuning-guides/measuring-resonances
+* Check if need to tune: Pressure Advance, Smooth Time
+  * Pressure Advance: https://docs.siboor.com/siboor-0.2-r1-aug/tuning-guides/pressure-advance
+  * Random video: https://www.youtube.com/watch?v=LVp15eGXwm0
+
 * Klipper LED as status - Something for finished, Printing and loading
 * Camera - mount on top of z extruction.
     * I bought: https://www.amazon.com.au/dp/B09KHHN8B3
     * Have this working with crowsnest - think deprecates mjpg-streamer + www-mjpgstreamer
-
-
-* Look at accelerometer and input shaping.
-* Check if need to tune: Pressure Advance, Smooth Time
 
 ## Nice to improve
 * Case clips for panel quick attach/detach
