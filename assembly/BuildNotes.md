@@ -1,6 +1,10 @@
-Post install are notes in future.txt
+# Mechanical Assembly Build Notes
+These are originally notes I took during building.
+0 Keiths Notes.txt should be a consise delta to the readme and assembly PDF>
 
-=====
+After this the ../future.md
+
+# Overview
 
 These are my assembly notes for: Voron 0.2 R1 (2023 June) by Siboor
   - This had SIBOOR upgrades not part of official Voron, so was called SUBOOR v0.2 R1 (Aug 2023)
@@ -15,71 +19,79 @@ These are my assembly notes for: Voron 0.2 R1 (2023 June) by Siboor
     - High Temperature Resistant PC Panel
   - TBC RGB indicator
 
-Specs:
-  - Built Weight: < 7kg
-  - External Dimensions: 24x24x38
-    - TODO: Can it fit in idea cube? Hight MAYBE problem!!
-  - Printing Size: 12x12x12
+## Specs
+- Built Weight: < 7kg
+- External Dimensions: 240x240x380 (in mm) 
+    - Note: This CANNOT fit in ikea cube even with top-hat removed. The hotend/tubes are too high.
+- Printing Size: 120x120x120 (in mm)
 
-Purchase notes:
-  - I bought from Aliexpress not siboor store (no reason, saw on Aliexpress).
-    - I did consider CNC but kept with printed ABS incase wanted to mod later.
-      - At time, think some ABS still had to be used ie 1 fut.
-    - Went black and red (expect most common); didn't notice option for different extrusions at time of ordering.
-      - Kit had note saying: Sunlu red + sublu black
-  - Was 857.29 plus P&H > 943.02 (at 23-Feb-2023)
+## Purchase notes
+- I bought from Aliexpress not siboor store (no reason, saw on Aliexpress).
+  - I did consider CNC but kept with printed ABS incase wanted to mod later.
+    - At time, think some ABS still had to be used ie 1 fut.
+  - Went black and red (expect most common); didn't notice option for different extrusions at time of ordering.
+    - Kit had note saying: Sunlu red + sublu black
+- Was 857.29 plus P&H > 943.02 (at 23-Feb-2023)
 
-Build Time:
-  - I wasn't rushing and took a while to find deltas from my kit to officail documentation
-    - Siboor store said 3 days; have seen 30hr estimate.
-  - I found about a week before powering on doing a few hours most nights and several on weekends.
+## Build Time
+- I wasn't rushing and took a while to find deltas from my kit to officail documentation
+- Siboor store said 3 days; have seen 30hr estimate.
+- I found about a week before powering on doing a few hours most nights and several on weekends.
 
-References:
-  [1] README with deltas to official: https://github.com/Lzhikai/SIBOOR-Voron-0.2/blob/main/supplementary/README.md
-  [2] Official 0.2: https://github.com/VoronDesign/Voron-0/blob/Voron0.2/Manuals/VORON_V0.2_Assembly_Manual.pdf
-  [3] Motors and Feet: https://github.com/Lzhikai/SIBOOR-Voron-0.2/blob/main/supplementary/SIBOOR%20V0.2%20Supplementary%20Manual.pdf
-    - For CNC parts (I used ABS)
-  [4] Wiring / Motors: https://github.com/Lzhikai/SIBOOR-Voron-0.2/blob/main/supplementary/SIBOOR0.2-supplementary.pdf
-  [5] https://github.com/Lzhikai/SIBOOR-Voron-0.2/blob/main/supplementary/SIBOOR%200.2%20R0%20Upgrade%20R1%20Guide.pdf
-  [6] Bom: https://github.com/Lzhikai/SIBOOR-Voron-0.2/blob/main/BOM.md
-Root Project from QR Code: https://github.com/Lzhikai/siboor-voron/tree/main/Voron-0.2
-  [7] Sourcing guide including Lubricates https://vorondesign.com/sourcing_guide
+## References
+* [1] README with deltas to official: https://github.com/Lzhikai/SIBOOR-Voron-0.2/blob/main/supplementary/README.md
+* [2] Official 0.2: https://github.com/VoronDesign/Voron-0/blob/Voron0.2/Manuals/VORON_V0.2_Assembly_Manual.pdf
+* [3] Motors and Feet: https://github.com/Lzhikai/SIBOOR-Voron-0.2/blob/main/supplementary/SIBOOR%20V0.2%20Supplementary%20Manual.pdf
+    * For CNC parts (I used ABS)
+* [4] Wiring / Motors: https://github.com/Lzhikai/SIBOOR-Voron-0.2/blob/main/supplementary/SIBOOR0.2-supplementary.pdf
+* [5] https://github.com/Lzhikai/SIBOOR-Voron-0.2/blob/main/supplementary/SIBOOR%200.2%20R0%20Upgrade%20R1%20Guide.pdf
+* [6] Bom: https://github.com/Lzhikai/SIBOOR-Voron-0.2/blob/main/BOM.md
+* Root Project from QR Code: https://github.com/Lzhikai/siboor-voron/tree/main/Voron-0.2
+* [7] Sourcing guide including Lubricates https://vorondesign.com/sourcing_guide
 
-  Videos:
-    [8] 0.2 suboor kit build video: https://www.youtube.com/watch?v=zX7Bgzhw0OM&ab_channel=KanduWorkshop
-    [9] 0.2 build video series: https://www.youtube.com/watch?v=-NzwDm4eyQc&ab_channel=Greg%27sMakerCorner
-    [10] 0.2 build series: https://www.youtube.com/watch?v=lKliWNphWic&list=PLiiEyXLrqIBSOPptPnDcVc-NQQFDGW8lQ&index=7&ab_channel=ModBotArmy
-    [11] 0.1 Bed upgrade (webpage): https://3dpandme.com/2022/03/12/funssor-kirigami-bed-upgrade-for-the-voron-0-1/
+* Videos:
+  * [8] 0.2 Siboor kit build video: https://www.youtube.com/watch?v=zX7Bgzhw0OM&ab_channel=KanduWorkshop
+  * [9] 0.2 build video series: https://www.youtube.com/watch?v=-NzwDm4eyQc&ab_channel=Greg%27sMakerCorner
+  * [10] 0.2 build series: https://www.youtube.com/watch?v=lKliWNphWic&list=PLiiEyXLrqIBSOPptPnDcVc-NQQFDGW8lQ&index=7&ab_channel=ModBotArmy
+  * [11] 0.1 Bed upgrade (webpage): https://3dpandme.com/2022/03/12/funssor-kirigami-bed-upgrade-for-the-voron-0-1/
 
-Extras:
-  - Isopropyl alchohol
-  - WD40 White Lithium Greece (spray can)
-    - I used as lubricate for linear rails and screw
-  - Permatex White Lithium Grease - 80345 for bearings
-    - For print head bearings
-  - Locktight Blue for grub screws
-  - Super glue for print head nut
-    - I had 2 part 5min eproxy
-  - Cable cutter and stripper
-  - JST XH connector tool - at least for hotend to Umbiligal PCB
-  - Optional:
-    - Cable management stickies
+# Extras I bough
+* Isopropyl alchohol
+* WD40 White Lithium Greece (spray can)
+    * I used as lubricate for linear rails and screw
+* Permatex White Lithium Grease - 80345 for bearings
+    * For print head bearings
+* Locktight Blue for grub screws
+* Super glue for print head nut
+    * I had 2 part 5min eproxy
+* Cable cutter and stripper
+* JST XH connector tool - at least for hotend to Umbiligal PCB
+* Optional:
+    * Cable management stickies
 
----
-Parts:
+
+# Notes:
+- Parts:
   - From (1):
-    Extrusion A=B (All tapped)
-    C=H
+    - Extrusion A=B (All tapped)
+    - C=H
   - The Kirigami bed deprecates:
-      - 100mm "F Extrusion" x2 (end M3)
-      - 100mm "G Extrusion" x1 (27.5x2 same face)
-      ~ page 38 (note says to skip to page 43)
+    - 100mm "F Extrusion" x2 (end M3)
+    - 100mm "G Extrusion" x1 (27.5x2 same face)
+    - ~ page 38 (note says to skip to page 43)
   - There are separate extrusions in the kit for the lid
-
+- I think these were omitted below so including here to ensure captured
+  - Alignment tools ~ 19min of https://www.youtube.com/watch?v=zX7Bgzhw0OM&list=WL&index=6&ab_channel=KanduWorkshop
+  - Motor B/X is top left  when viewed from the front
+  - Motor A/Y is top right when viewed from the front
+  - I didn't sand axel so gears more free (~p160)
+  - Something about [4] p9
+    - I didn't do this, at least not initially. It also required splicing both in parallel
+- Clarification
   - p21 
-      > These were leavered arms in first tray
+    - These were leavered arms in first tray
   - p36 'Frame - Component Prep' this is all bed tray
-    > MOD: Have Kirigami which mentions skip (on p38) but is here
+    - MOD: Have Kirigami which mentions skip (on p38) but is here
       - These two parts are part of metal tray for Kirigami.
       - A Kirigami v0 install video is at: https://www.youtube.com/watch?v=eOnNvhircn8&ab_channel=MapleLeafMakers
         - I have v0.2 which has some mods coming up:
@@ -95,7 +107,7 @@ Parts:
           - The part shown in RED with the Z was BLACK in my kit
           - Mount with the horizontal part at top (I originally did bottom and notied at p92 - leasily swapped)
         - Electronics used 3x6
-      >> Returns to manual after attached p47 (covered by https://github.com/christophmuellerorg/voron_0_kirigami_bed/blob/master/Images/stealth_beta.png)
+      - Returns to manual after attached p47 (covered by https://github.com/christophmuellerorg/voron_0_kirigami_bed/blob/master/Images/stealth_beta.png)
 
   - p49-51; have an update to z endmount stops in 0.2 R1 upgrade
       - this is shown in (5) as z endstop mount; the red one with frowny eye-brows
@@ -221,7 +233,7 @@ Parts:
       - Remove film before inserting panels
       - 2x Extra screws per panell cannot be accessed so were unnecessary
         - two on side away from ethernet can be added to plastic
-    > Skip to 191
+    - > Skip to 191
 
   - p192; added M3x6 screws as well as tape
 
@@ -232,12 +244,10 @@ Parts:
       - Cable management I added a heatset and M3x12 to attach
     - No light to front of bed yet
       - Believe on wiring diagram but wait until later. Unsure of dragchain spaec too
-    > Returns 205
+    - > Returns 205
 
 
- - p218 + 219 > Replaced with umbilical PCB and red cable pass through bracket
+  - p218 + 219 > Replaced with umbilical PCB and red cable pass through bracket
 
- - Notes on case parts - have a tab goes along top/bottom to align parts
+  - Notes on case parts - have a tab goes along top/bottom to align parts
 
-
-*********

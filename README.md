@@ -9,6 +9,9 @@ Having time again I'd see price bying from siboor directly to choose different c
 * Login:
 	* username: fly
 	* default password: mellow
+* I bought this kit: https://www.aliexpress.com/item/1005005295642824.html
+	* When purchased I got with Drafon HF Hotend and Red ABS parts for AUD 943.02 (with shipping).
+	* As at 2025-05-01 it is: AUD 645.39 with no ABS and TZ-V6-2.0 (if wanted second...)
 
 # Notes
 * Do NOT do full apt upgrade on console.
@@ -22,16 +25,22 @@ Having time again I'd see price bying from siboor directly to choose different c
 ## Mechanical Assembly
 * The mechanical build largely went well following the PDF manuals.
 	* As this was a 0.2r1 kit some mod 'patches' were not fully covered.
+* Main Manuals and Notes during mechanical assembly (in assembly folder):
+	* [BuildNotes.md](assembly\BuildNotes.md) these are verbose notes /ideas while mechically building device
+	* 0 Keith Notes.txt - this was intended as concise patches to readme and assembly manual
+	* 1 README with deltas to official was originally from: https://github.com/Lzhikai/SIBOOR-Voron-0.2/blob/main/supplementary/README.md
+  	* 2 Official 0.2 Assembly Manual was originlly from: https://github.com/VoronDesign/Voron-0/blob/Voron0.2/Manuals/VORON_V0.2_Assembly_Manual.pdf
+  	* 3 Siboor Supplementary with info on Motors and Feet was originally from: https://github.com/Lzhikai/SIBOOR-Voron-0.2/blob/main/supplementary/SIBOOR%20V0.2%20Supplementary%20Manual.pdf
+  	* 4 Siboor Supplementary with info on Wiring / Motors was originally from: https://github.com/Lzhikai/SIBOOR-Voron-0.2/blob/main/supplementary/SIBOOR0.2-supplementary.pdf
+  	* 5 Siboor Upgrades was originally from: https://github.com/Lzhikai/SIBOOR-Voron-0.2/blob/main/supplementary/SIBOOR%200.2%20R0%20Upgrade%20R1%20Guide.pdf
+ * Other Info:
+  	* Siboor V0.2 Bom: https://github.com/Lzhikai/SIBOOR-Voron-0.2/blob/main/BOM.md
+	* Root Project from QR Code: https://github.com/Lzhikai/siboor-voron/tree/main/Voron-0.2
 * The ADX345 accelerometer mounting was eventually found at end of "assembly/4 SIBOOR0.2-supplementary.pdf".
 	* I had previouslly used longer bolts and attempt to mount to front of toolhead.
-* I think there are other notes somewhere
-	* Alignment tools ~ 19min of https://www.youtube.com/watch?v=zX7Bgzhw0OM&list=WL&index=6&ab_channel=KanduWorkshop
-	* Motor B/X is top left  when viewed from the front
-	* Motor A/Y is top right when viewed from the front
-	* I didn't sand axel so gears more free (~p160)
-	* Something about [4] p9
-		* I didn't do this, at least not initially. It also required splicing both in parallel
-
+* G10 FR4 FibreGlass Sheet (Green PCB Material):
+	* Single Sided Copper: https://www.aliexpress.com/item/1005006103130312.html 	AU 4.39 for 120x180 - I have 20x30 for 9.74
+	* AU 14.19 for 235x235x1.5mm
 
 ## Electrical
 My extruder fan was not originally working. This was tracked to a polarity issue into the fan cable. These cannot be swapped.
@@ -83,7 +92,24 @@ This explicitly calls out some sections
 * https://www.klipper3d.org/Config_Reference.html
 
 
-# Additional Tools:
+# Additional Purchases:
+
+## Parts for physical assembly (also in [BuildNotes.md](assembly\BuildNotes.md))
+* Isopropyl alchohol
+* WD40 White Lithium Greece (spray can)
+    * I used as lubricate for linear rails and screw
+* Permatex White Lithium Grease - 80345 for bearings
+    * For print head bearings
+* Locktight Blue for grub screws
+* Super glue for print head nut
+    * I had 2 part 5min eproxy
+* Cable cutter and stripper
+* JST XH connector tool - at least for hotend to Umbiligal PCB
+* Optional:
+    * Cable management stickies
+
+
+## Tools post-assembly
 The Dragon HF seemed to be missing some additional tools in full kit; ended up getting the following to help
 I bought following:
 * Open Ended Mini Spanners: https://www.amazon.com.au/dp/B0DBY93B7Q 			AUD 14.98 	Set (4mm, 4.5, 5, 5.5, 6, 7, 8, 9, 10, 11)
@@ -108,6 +134,12 @@ These can be ued with several of below
 	* https://www.aliexpress.com/item/1005001620042630.html 	AUD 4.14  	I got pairs on: (0.2, 0.4, 0.6)
 * Drive Gear with Hardended Steel gears - have NOT yet used this for gears (arrived after re-assembling mini Stealthburner)
 	* https://www.aliexpress.com/item/1005007929025658.html 	AU 7.39 	Intended as spare 50T gear and abrasiev filamenets.
+* Adapter for screen USB Cable
+	* This seemed tight against sides; didn't want to damage the screen cable so got something else to prolong life.
+	* Tried a few 90deg adapters but either blocked ports or didn't have clearance.
+	* Currently using a USB A 30cm extension cable: https://www.ebay.com.au/itm/135236859084 AU 4.95
+* Small Camera:
+	* USB 'RPI 3 Model B 640x480' https://www.amazon.com.au/dp/B09KHHN8B3 	AU 13.26 Not yet working; unsure if HW/SW/Drivers
 
 ## Parts for Dragon HF Hotend abrasive/replacement
 These are not yet used, arrived too late. 
@@ -138,14 +170,21 @@ Home is: * Dragon Burner v8 Home: https://github.com/chirpy2605/voron/blob/main/
 * RGA Sequins: https://www.aliexpress.com/item/1005006023213341.html 	AU 5.62 (4 LEDs)
 	* Neopixel Alternative: https://www.aliexpress.com/item/1005006220336798.htm 	AU 5.79 	<- I got both, thought this was neopixel above normal RGB
 
+## Purchases but not necessarily used:
+These maybe used on my Ender3 v2 to NG upgrade instead (for larger build volume). Plan to do that AFTER the v0.2 is working so have something working at all times.
+* Funssor Ender 3 NG Conversion Kit: https://www.aliexpress.com/item/1005006191089001.html 	AU 188.98 motion and electronics
+	* Note bought in 2024 prior to offical release. Maybe newer versions now eg : https://www.aliexpress.com/item/1005007822628611.html Ender NG v1.2 for 290.99 / 326.69 wuth motors
+* Klipper expansion board - may need for lights: https://www.aliexpress.com/item/1005005777656355.html 	AU24.99
+* Klicky Kit for bed levelling: https://www.aliexpress.com/item/1005005467101449.html 	AU 7.19 	Bought in 2024, maybe better optiosn now
+* Nevermore v6 DUO Cabon Filters for Voron: https://www.aliexpress.com/item/1005005621338360.html 	AU 36.05 for 2
+* PEI + Smooth PEO Build Plate: https://www.aliexpress.com/item/1005006950525967.html 	AU 11.37
+* RGB LEDs: https://www.aliexpress.com/item/1005007075886697.html 	AUD 17.27 for 2x158mm
+* Belt Tensionmeter: https://www.aliexpress.com/item/1005006724674386.html 	AU 12.20 (I used guitar tuner while initially building)
+* ADXL345 3 Axis Acceleration Module: https://www.aliexpress.com/item/32452794842.html 	AU 5.41 (think kit had some too)
+* Filament Run-out sensor: https://www.aliexpress.com/item/32917462715.html 	AU 3.35
+* PTFE Tube https://www.aliexpress.com/item/1005004969503645.html 	AU 7.50 for 2m with cutter
+* 10ml 243 Loctite: AUD 4.42
+
 
 # Future Thoughts
-* Look at case quick assembly and door handles
-* Look at chamber filter - maybe something to vent if ABS stinks
-* INDX looks interesting, expect to fit 4x toolchangers in V0. Can be shared with EnderNG etc
-* Do up V6 drop-in could be good for replacements (replaced by above) - mini steath burner then dragon burner.
-* Dragon Burner - gets good reviews. Allows for AMS and potentially probing.
-* Box Turner AWS - allow filamenet swaps after filament cutter
-	* May need filamenet run-out sensors etc
-* If INDX can support CAM bus good to update all system for better strain relief.
-* Maybe replace Fly-Gemini-V3 to RPI4 and generic with CAM support. Allow mainline klipper??
+These are tracked in [Future.md](future.md)
