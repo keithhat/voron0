@@ -4,11 +4,15 @@ This is a backlog of tasks I'd like to improve. It was started after initial mec
 
 # Current Status
 ## Blockers for printing
-* Retune PID:
+* IP: Cleanup macros; rename LED ones, See if can hide on Klipper Web UI,
+* Look at running/fixing: v0: BED_SCREWS_ADJUST - MAY help with bed levelling
     * Guide: https://docs.vorondesign.com/build/startup/#pid-tune-bed--hotend
     * Hotend with stainless steel and fan now working
-    * Bed with all fans now working
-* Above manual includes v0: BED_SCREWS_ADJUST - MAY help with bed levelling
+    * On printer think:
+        * /home/fly//klipper/klippy/extras/bed_screws.py
+      * Also have:
+        * /home/fly//KlipperScreen/panels/bed_mesh.py
+        * /home/fly//klipper/klippy/extras/bed_mesh.py
 
 * Re-level bed and setup z-home (z-offset) - with heated bed and hotend
     * Check probing all points is 120; was 121 when cold.
@@ -19,6 +23,8 @@ This is a backlog of tasks I'd like to improve. It was started after initial mec
 
 * Slicer integration; ideally over wifi
 * Calibration Prints - ie cube
+  * Check can wirelessly send to printer
+* Move printer to next to ender3
 
 
 ## Stretch
@@ -33,6 +39,11 @@ This is a backlog of tasks I'd like to improve. It was started after initial mec
 * Door handle fix - I'm ok to screw through front panel
 * Can extruder fan be controlled? Ideally off unless extruder > say 40deg. Allows machine to be quieter / always on.
     * Any spare switch we can use to control?
+    * https://docs.vorondesign.com/build/startup/#pid-tune-bed--hotend says Parts cooling to 25% can be done with: M106 S64
+    * Eg: SET_FAN_SPEED FAN=Nevermore SPEED=0.7
+    * Fly_Gemini_v3 defines:
+      * FAN0=PC6,
+      * FAN1=PC7,
 * Ensure chamber fan does get triggered
 * What is the MCU LED - has the Kirigami LED replaced this?
 * Nevermore chamber filter - to help with ABS fumes as know will be in confined space

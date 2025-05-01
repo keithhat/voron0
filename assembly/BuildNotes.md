@@ -55,7 +55,7 @@ These are my assembly notes for: Voron 0.2 R1 (2023 June) by Siboor
   * [10] 0.2 build series: https://www.youtube.com/watch?v=lKliWNphWic&list=PLiiEyXLrqIBSOPptPnDcVc-NQQFDGW8lQ&index=7&ab_channel=ModBotArmy
   * [11] 0.1 Bed upgrade (webpage): https://3dpandme.com/2022/03/12/funssor-kirigami-bed-upgrade-for-the-voron-0-1/
 
-# Extras I bough
+# Extras I bought
 * Isopropyl alchohol
 * WD40 White Lithium Greece (spray can)
     * I used as lubricate for linear rails and screw
