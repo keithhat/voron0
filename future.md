@@ -4,7 +4,16 @@ This is a backlog of tasks I'd like to improve. It was started after initial mec
 
 # Current Status
 ## Blockers for printing
-* IP: Cleanup macros; rename LED ones, See if can hide on Klipper Web UI,
+* Re-level bed and setup z-home (z-offset) - with heated bed and hotend
+    * Guide: https://docs.vorondesign.com/build/startup/#pid-tune-bed--hotend mentions Z_ENDSTOP_CALIBRATE
+    * Maybe also: https://docs.siboor.com/siboor-0.2-r1-aug/the-build/initial-startup-checks#calibrate-the-z0-position
+    * Check probing all points is 120; was 121 when cold.
+    * See if can adjust bed height to avoid initial 'hacks'
+    * https://docs.vorondesign.com/build/startup/#z-endstop-location-v0  Says do COLD with paper
+* Check sensitivity for sensorless homing for x/y -> Less jerky finding end
+    * https://docs.siboor.com/siboor-0.2-r1-aug/the-build/initial-startup-checks 
+    * https://docs.vorondesign.com/tuning/sensorless.html
+
 * Look at running/fixing: v0: BED_SCREWS_ADJUST - MAY help with bed levelling
     * Guide: https://docs.vorondesign.com/build/startup/#pid-tune-bed--hotend
     * Hotend with stainless steel and fan now working
@@ -13,13 +22,6 @@ This is a backlog of tasks I'd like to improve. It was started after initial mec
       * Also have:
         * /home/fly//KlipperScreen/panels/bed_mesh.py
         * /home/fly//klipper/klippy/extras/bed_mesh.py
-
-* Re-level bed and setup z-home (z-offset) - with heated bed and hotend
-    * Check probing all points is 120; was 121 when cold.
-    * See if can adjust bed height to avoid initial 'hacks'
-    * https://docs.vorondesign.com/build/startup/#z-endstop-location-v0  Says do COLD with paper
-* Check sensitivity for sensorless homing for x/y -> Less jerky finding end
-    * https://docs.vorondesign.com/tuning/sensorless.html
 
 * Slicer integration; ideally over wifi
 * Calibration Prints - ie cube
@@ -37,7 +39,9 @@ This is a backlog of tasks I'd like to improve. It was started after initial mec
 ## Nice to improve
 * Case clips for panel quick attach/detach
 * Door handle fix - I'm ok to screw through front panel
-* Can extruder fan be controlled? Ideally off unless extruder > say 40deg. Allows machine to be quieter / always on.
+* Can extruder fan be controlled? Think also called hotend fan.
+    * Ideally off unless extruder > say 40deg. Allows machine to be quieter / always on.
+    * According to: https://docs.siboor.com/siboor-0.2-r1-aug/the-build/initial-startup-checks the Hotend fan cannot be controlled.
     * Any spare switch we can use to control?
     * https://docs.vorondesign.com/build/startup/#pid-tune-bed--hotend says Parts cooling to 25% can be done with: M106 S64
     * Eg: SET_FAN_SPEED FAN=Nevermore SPEED=0.7
