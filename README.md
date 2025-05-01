@@ -59,6 +59,7 @@ Flashing fimware main indicate success and failure; this was found to be ok but 
 	* This is fairly stiff; a CAM bus or USB equivalent think would be useful in future
 
 # Guides - Assembly, FW and Tuning
+## General
 * Siboor v0.2 r1 Aug: https://docs.siboor.com/siboor-0.2-r1-aug
 	* Initial Startup and Wiring: https://docs.siboor.com/siboor-0.2-r1-aug/the-build/initial-startup
 	* Mods to vanilla: https://docs.siboor.com/siboor-0.2-r1-aug/the-build/assembly-manual
@@ -87,6 +88,11 @@ This explicitly calls out some sections
 * https://pastebin.com/GBzkNXcq
 * https://pastebin.com/pv8M4huD
 * https://github.com/julianschill/klipper-led_effect/blob/master/examples/Voron_Stealthburner/stealthburner_led_effects_3_leds.cfg
+
+
+## Ultimaker Cura Integration
+* I followed the guide at: [3 Siboor v0.2 Supplementary Manual](https://github.com/Lzhikai/SIBOOR-Voron-0.2/blob/main/supplementary/SIBOOR%20V0.2%20Supplementary%20Manual.pdf)
+	* Same info in [4 Siboor0.2-Supplementary.pdf](https://github.com/Lzhikai/SIBOOR-Voron-0.2/blob/main/supplementary/SIBOOR0.2-supplementary.pdf)
 
 ## Unsure if used:
 * https://www.klipper3d.org/Config_Reference.html

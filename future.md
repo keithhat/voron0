@@ -4,15 +4,18 @@ This is a backlog of tasks I'd like to improve. It was started after initial mec
 
 # Current Status
 ## Blockers for printing
+* Check sensitivity for sensorless homing for x/y -> Less jerky finding end
+    * https://docs.siboor.com/siboor-0.2-r1-aug/the-build/initial-startup-checks 
+    * https://docs.vorondesign.com/tuning/sensorless.html
+    * Read rest of sections to ensure haven't missed anything
+
 * Re-level bed and setup z-home (z-offset) - with heated bed and hotend
     * Guide: https://docs.vorondesign.com/build/startup/#pid-tune-bed--hotend mentions Z_ENDSTOP_CALIBRATE
     * Maybe also: https://docs.siboor.com/siboor-0.2-r1-aug/the-build/initial-startup-checks#calibrate-the-z0-position
     * Check probing all points is 120; was 121 when cold.
     * See if can adjust bed height to avoid initial 'hacks'
     * https://docs.vorondesign.com/build/startup/#z-endstop-location-v0  Says do COLD with paper
-* Check sensitivity for sensorless homing for x/y -> Less jerky finding end
-    * https://docs.siboor.com/siboor-0.2-r1-aug/the-build/initial-startup-checks 
-    * https://docs.vorondesign.com/tuning/sensorless.html
+    * How was the bottom endstop set? Add it if possible
 
 * Look at running/fixing: v0: BED_SCREWS_ADJUST - MAY help with bed levelling
     * Guide: https://docs.vorondesign.com/build/startup/#pid-tune-bed--hotend
@@ -23,7 +26,6 @@ This is a backlog of tasks I'd like to improve. It was started after initial mec
         * /home/fly//KlipperScreen/panels/bed_mesh.py
         * /home/fly//klipper/klippy/extras/bed_mesh.py
 
-* Slicer integration; ideally over wifi
 * Calibration Prints - ie cube
   * Check can wirelessly send to printer
 * Move printer to next to ender3
@@ -32,7 +34,9 @@ This is a backlog of tasks I'd like to improve. It was started after initial mec
 ## Stretch
 * Klipper LED as status - Something for finished, Printing and loading
 * Camera - ideally mounted on top of z extruction. This may need mjpg-streamer + www-mjpgstreamer
-  * I bought: https://www.amazon.com.au/dp/B09KHHN8B3
+    * I bought: https://www.amazon.com.au/dp/B09KHHN8B3
+    * [3 Siboor v0.2 Supplementary](https://github.com/Lzhikai/SIBOOR-Voron-0.2/blob/main/supplementary/SIBOOR%20V0.2%20Supplementary%20Manual.pdf) p30 had info (for Siboor image)
+        * Same info in [4 Siboor0.2-Supplementary.pdf](https://github.com/Lzhikai/SIBOOR-Voron-0.2/blob/main/supplementary/SIBOOR0.2-supplementary.pdf)
 * Look at accelerometer and input shaping.
 * Check if need to tune: Pressure Advance, Smooth Time
 
@@ -46,8 +50,8 @@ This is a backlog of tasks I'd like to improve. It was started after initial mec
     * https://docs.vorondesign.com/build/startup/#pid-tune-bed--hotend says Parts cooling to 25% can be done with: M106 S64
     * Eg: SET_FAN_SPEED FAN=Nevermore SPEED=0.7
     * Fly_Gemini_v3 defines:
-      * FAN0=PC6,
-      * FAN1=PC7,
+        * FAN0=PC6,
+        * FAN1=PC7,
 * Ensure chamber fan does get triggered
 * What is the MCU LED - has the Kirigami LED replaced this?
 * Nevermore chamber filter - to help with ABS fumes as know will be in confined space
