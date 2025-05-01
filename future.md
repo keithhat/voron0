@@ -4,21 +4,25 @@ This is a backlog of tasks I'd like to improve.
 
 # Current Status
 ## Blockers for printing
-* Extruder calibration / esteps
-* Retude PID for hotend, now has fan.
-* Bed Screws Adjust macro working - to help with bed levelling
+* Retune PID:
+  ** Guide: https://docs.vorondesign.com/build/startup/#pid-tune-bed--hotend
+  ** Hotend with stainless steel and fan now working
+  ** Bed with all fans now working
+* Above manual includes v0: BED_SCREWS_ADJUST - MAY help with bed levelling
+
 * Re-level bed and setup z-home (z-offset) - with heated bed and hotend
   ** Check probing all points is 120; was 121 when cold.
   ** See if can adjust bed height to avoid initial 'hacks'
-* Fix tool: BED_SCREWS_ADJUST
+  ** https://docs.vorondesign.com/build/startup/#z-endstop-location-v0  Says do COLD with paper
+* Check sensitivity for sensorless homing for x/y -> Less jerky finding end
+  ** https://docs.vorondesign.com/tuning/sensorless.html
+
 * Slicer integration; ideally over wifi
-* Do initial print calibration
 * Calibration Prints - ie cube
 
 
 ## Stretch
-* Klipper LED as status - may need to setup Klipper-LED effects
-* Check sensitivity for sensorless homing for x/y -> Less jerky finding end
+* Klipper LED as status - Something for finished, Printing and loading
 * Camera - ideally mounted on top of z extruction. This may need mjpg-streamer + www-mjpgstreamer
 * Look at accelerometer and input shaping.
 * See if have included these - PDFs maybe in assembly
