@@ -26,7 +26,7 @@ Having time again I'd see price bying from siboor directly to choose different c
 * The mechanical build largely went well following the PDF manuals.
 	* As this was a 0.2r1 kit some mod 'patches' were not fully covered.
 * Main Manuals and Notes during mechanical assembly (in assembly folder):
-	* [BuildNotes.md](assembly\BuildNotes.md) these are verbose notes /ideas while mechically building device
+	* [BuildNotes.md](assembly/BuildNotes.md) these are verbose notes /ideas while mechically building device
 	* 0 Keith Notes.txt - this was intended as concise patches to readme and assembly manual
 	* 1 README with deltas to official was originally from: https://github.com/Lzhikai/SIBOOR-Voron-0.2/blob/main/supplementary/README.md
   	* 2 Official 0.2 Assembly Manual was originlly from: https://github.com/VoronDesign/Voron-0/blob/Voron0.2/Manuals/VORON_V0.2_Assembly_Manual.pdf
@@ -94,7 +94,7 @@ This explicitly calls out some sections
 
 # Additional Purchases:
 
-## Parts for physical assembly (also in [BuildNotes.md](assembly\BuildNotes.md))
+## Parts for physical assembly (also in [BuildNotes.md](assembly/BuildNotes.md))
 * Isopropyl alchohol
 * WD40 White Lithium Greece (spray can)
     * I used as lubricate for linear rails and screw
