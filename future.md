@@ -85,6 +85,13 @@ This is a backlog of tasks I'd like to improve. It was started after initial mec
 - I MAY have an expander; if so look at installing (possibly need for LEDs):
     - https://github.com/Lzhikai/SIBOOR-Voron-0.2/blob/main/expander/README.md
 
+# Useful Ideas for storing tools:
+* Container hold set of smaller wrench; ideally rotatable like one of the screwdrivers I have.
+  * MAYBE want a flat cotiner; tbc
+* Something to store the hex driver sets I have
+* Something to hold collection of alan keys; sort between printers.
+* Something to hold collection of flat cheapper spanners; sort between printers
+
 # Consider Buying Addons
 * Alternative beds; ensure have something for each type; PLA, ABS, PETG
   * Glass (Tile?)

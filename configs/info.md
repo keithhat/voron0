@@ -23,16 +23,21 @@ These paths are using the Gemini board FW locations
 ## Do STEPPER_BUZZ for correct directions
 * The STEPPER_BUZZ (and then homing down) was useful for me to confirm z-axis. I'd assumed printing location should be 120 but this really should be 0.0.
 	* STEPPER_BUZZ https://docs.vorondesign.com/build/startup/#stepper-motor-check and matching video: https://www.youtube.com/watch?v=wXYruV6QdDQ$t=1700
+* ALSO note that homing direction can be set in config file - confirm these two.
+
+## Z Axis:
 * Z Calibration
 	* Home - will go down to bottom (max) then move back up to 30 (soem distance from nozel).
 	* From https://docs.vorondesign.com/build/startup/#z-endstop-location-v0 run Z_ENDSTOP_CALIBRATE to tune Z0 to nozzle and setup position_endstop.
 		* Nozzle cold with paper; as thermal expansion is 100um ~ paper
-		* Viedo of similar is at: https://www.youtube.com/watch?v=wXYruV6QdDQ&t=2110
+		* Video of similar is at: https://www.youtube.com/watch?v=wXYruV6QdDQ&t=2110
 * Bed Levelling:
 	* After homing can run BED_SCREWS_ADJUST
 		* Manual is at: https://docs.vorondesign.com/build/startup/#bed-leveling
 		* Video is at: https://www.youtube.com/watch?v=wXYruV6QdDQ&t=2480
-	* Redo z-calibration after levelling to ensure probe is correct
+	* After levelling, redo the z-calibration (Z_ENDSTOP_CALIBRATE) to ensure probe is correct
+* The following siboor manual may also be useful: https://docs.siboor.com/siboor-0.2-r1-aug/the-build/initial-startup-checks#calibrate-the-z0-position
+* Note: I repeated when at PLA temps BED 60, Extruder 200 incase warming.
 
 # Pluggins
 ## Neopixel LEDs - ie BED Logo
