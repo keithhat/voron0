@@ -1,5 +1,6 @@
-# Klipper config files
+# Klipper setup / config / tuning
 
+# Config Files 
 I'm still learning klipper so there maybe better ways to backup files.
 This has that information with a combination of where to place them.
 
@@ -7,21 +8,34 @@ This has that information with a combination of where to place them.
 
 These paths are using the Gemini board FW locations
 * /home/fly/printer_data/config/
-** printer.cfg is the main one that references everything
-** boards/FLY_GEMINI_V3.cfg defines aliases for various pins so can have generic references in other config files
-** V0Display.cfg configures the USB display
-** fly_macros.cfg defines some gcode macros including the homing functions.
-** mainsail.cfg is a simlink to /home/fly/mainsail-config/client.cfg
-** fluidd.cfg is a simlink to /home/fly/fluidd-config/client.cfg
+	* printer.cfg is the main one that references everything
+	* boards/FLY_GEMINI_V3.cfg defines aliases for various pins so can have generic references in other config files
+	* V0Display.cfg configures the USB display
+	* fly_macros.cfg defines some gcode macros including the homing functions.
+	* mainsail.cfg is a simlink to /home/fly/mainsail-config/client.cfg
+	* fluidd.cfg is a simlink to /home/fly/fluidd-config/client.cfg
 
-
-### Extras
-
+## Extras
 * The LEDs:
-** klipper/klippy/extras/led_effect.py is a simlink to /home/fly/klipper-led_effect/src/led_effect.py
+	* klipper/klippy/extras/led_effect.py is a simlink to /home/fly/klipper-led_effect/src/led_effect.py
 
-## Pluggins
-### Neopixel LEDs - ie BED Logo
+# Tuning Notes
+## Do STEPPER_BUZZ for correct directions
+* The STEPPER_BUZZ (and then homing down) was useful for me to confirm z-axis. I'd assumed printing location should be 120 but this really should be 0.0.
+	* STEPPER_BUZZ https://docs.vorondesign.com/build/startup/#stepper-motor-check and matching video: https://www.youtube.com/watch?v=wXYruV6QdDQ$t=1700
+* Z Calibration
+	* Home - will go down to bottom (max) then move back up to 30 (soem distance from nozel).
+	* From https://docs.vorondesign.com/build/startup/#z-endstop-location-v0 run Z_ENDSTOP_CALIBRATE to tune Z0 to nozzle and setup position_endstop.
+		* Nozzle cold with paper; as thermal expansion is 100um ~ paper
+		* Viedo of similar is at: https://www.youtube.com/watch?v=wXYruV6QdDQ&t=2110
+* Bed Levelling:
+	* After homing can run BED_SCREWS_ADJUST
+		* Manual is at: https://docs.vorondesign.com/build/startup/#bed-leveling
+		* Video is at: https://www.youtube.com/watch?v=wXYruV6QdDQ&t=2480
+	* Redo z-calibration after levelling to ensure probe is correct
+
+# Pluggins
+## Neopixel LEDs - ie BED Logo
 Installed from: https://docs.siboor.com/other-products/led-effect-notes/installing-led-effects-software
 
 ```

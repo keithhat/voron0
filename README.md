@@ -20,6 +20,7 @@ Having time again I'd see price bying from siboor directly to choose different c
 	* Updating through the mainsail interface was ok, including plugins. Some had path clashes that were easily resolved.
 * The polarity of at least the extruder fan is important.
 * My extruder was skipping when initially tuning, ended up being some broken filament in heatbreak. Disassembled and used a tool to help extract
+* It was originally not clear to me, but the z-axis should be configured so toolhead is at 0.0 for correct printing location. (I originally had bottom as 0 and this at 120).
 
 # Build Info
 ## Mechanical Assembly
@@ -71,8 +72,11 @@ Flashing fimware main indicate success and failure; this was found to be ok but 
 
 ## Tuning and Initial Setup
 This explicitly calls out some sections
+* I missed it originally, but want to end up having z=0 (z0) being where the toolhead needs to be to touch plate and be ready for printing. We adjust Z switch so this is true.
+	* See https://docs.vorondesign.com/build/startup/#stepper-motor-check and matching video: https://www.youtube.com/watch?v=wXYruV6QdDQ$t=1700
 * Moving, homing, estep, PID: https://docs.vorondesign.com/build/startup/
-* Sensorless Homing: https://docs.vorondesign.com/tuning/sensorless.html
+	* Sensorless Homing: https://docs.vorondesign.com/tuning/sensorless.html
+	* A video of these is: https://www.youtube.com/watch?v=wXYruV6QdDQ
 * Klipper Common Errors: https://docs.vorondesign.com/community/troubleshooting/eddie/klipper_common_errors.html
 
 ## Sample Configus

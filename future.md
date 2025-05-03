@@ -3,24 +3,6 @@
 This is a backlog of tasks I'd like to improve. It was started after initial mechanical assembly.
 
 # Current Status
-## Blockers for printing
-
-* Re-level bed and setup z-home (z-offset) - with heated bed and hotend
-    * Initially look at: https://docs.siboor.com/siboor-0.2-r1-aug/the-build/initial-startup-checks#calibrate-the-z0-position
-    * Then continue with anything else in Guide: https://docs.vorondesign.com/build/startup/#z-endstop-location-v0 mentions Z_ENDSTOP_CALIBRATE - think also wants cold with paper.
-    * Check probing all points is 120; was 121 when cold.
-    * See if can adjust bed height to avoid initial 'hacks'
-    * How was the bottom endstop set? Add it if possible
-
-* Look at running/fixing: v0: BED_SCREWS_ADJUST - MAY help with bed levelling
-    * Initially look at: https://docs.siboor.com/siboor-0.2-r1-aug/the-build/initial-startup-checks#bed-screws-adjust
-    * Then continue with anythign else in Guide: https://docs.vorondesign.com/build/startup/#bed-screws-v0
-    * Hotend with stainless steel and fan now working
-    * On printer think:
-        * /home/fly//klipper/klippy/extras/bed_screws.py
-      * Also have:
-        * /home/fly//KlipperScreen/panels/bed_mesh.py
-        * /home/fly//klipper/klippy/extras/bed_mesh.py
 
 ## Final setup before doing generic prints
 * Calibration Prints
@@ -29,7 +11,6 @@ This is a backlog of tasks I'd like to improve. It was started after initial mec
   * Maybe more at: https://docs.siboor.com/siboor-0.2-r1-aug/tuning-guides (some of these are below in stretch)
   * Teching Tech or makers muse likely have others; retraction, overhangs etc
 * Move printer to next to ender3
-* Look at steps to apply for serial.
 
 
 ## Stretch
@@ -37,7 +18,8 @@ This is a backlog of tasks I'd like to improve. It was started after initial mec
   * Resonances: https://docs.siboor.com/siboor-0.2-r1-aug/tuning-guides/measuring-resonances
 * Check if need to tune: Pressure Advance, Smooth Time
   * Pressure Advance: https://docs.siboor.com/siboor-0.2-r1-aug/tuning-guides/pressure-advance
-  * Random video: https://www.youtube.com/watch?v=LVp15eGXwm0
+  * Sameple videos: https://www.youtube.com/watch?v=deqJTNmnVyc  https://www.youtube.com/watch?v=LVp15eGXwm0
+* Look at process to apply for serial.
 
 * Klipper LED as status - Something for finished, Printing and loading
 * Camera - mount on top of z extruction.
@@ -47,7 +29,7 @@ This is a backlog of tasks I'd like to improve. It was started after initial mec
 ## Nice to improve
 * Case clips for panel quick attach/detach
 * Door handle fix - I'm ok to screw through front panel
-* Can extruder fan be controlled? Think also called hotend fan.
+* Can extruder fan be controlled? Think also called hotend fan. Mainly for me being in same room :)
     * Ideally off unless extruder > say 40deg. Allows machine to be quieter / always on.
     * According to: https://docs.siboor.com/siboor-0.2-r1-aug/the-build/initial-startup-checks the Hotend fan cannot be controlled.
     * Any spare switch we can use to control?
@@ -60,10 +42,11 @@ This is a backlog of tasks I'd like to improve. It was started after initial mec
 * What is the MCU LED - has the Kirigami LED replaced this?
 * Nevermore chamber filter - to help with ABS fumes as know will be in confined space
 * Z-Stop - ideally Nozel probe
-    * I don't like z stop at bottom - at least how I'm doing z homing it is a pain.
-    * Currently finds switch but then goes fixed amount up as home. This isn't really viable with z-offset and bed levelling.
-    * Maybe combine with new toolhead for better solution.
-    * There are now lots of new options; Klacky, integrated into hotend, cartographer probing
+    * Prefer probe bed accuratly than assume offset - potentially max height issues though. Good to understand why v0.2 moved to bottom?
+    * This looks simple/cheap - doesn't allow for different beds though: https://github.com/Polar-Ted/STL-Files/tree/main/V0.1_Its_Not_a_Sexbolt_switch
+        * Video is at: https://www.youtube.com/watch?v=bdxmqTDDsMM
+    * Expect some options especially if change to DragonBurner - this would allow for differnt beds too.
+    * There are now lots of new options possibly for autoo bed levelling too - Klacky, integrated into hotend, cartographer probing
 * Look at Filament path through rear-right foot. May need pnumatic couplers rather than attempt to feed PTFE tube
 * Ensure idler cam locks work well with printer hat
 * Check toolhead is ok with PLA, may need better cooling. Think Dragon Burner useful and helps with some other options (filament cutter, maybe probe)
@@ -71,6 +54,9 @@ This is a backlog of tasks I'd like to improve. It was started after initial mec
     * Consider adding LED lights; I decided to NOT use in original mini StealthBurner build
     * Consider a filament cutter to allow AMS system such as armoured turtle, 8 track or ERCF v2.
 * LED Strips and possibly affects (if RGB)
+
+# Maintenance
+* Belt Tension:: https://www.youtube.com/watch?v=AmgCqy7FisE
 
 # Print Fixes / Upgrades
 * AC input fix
