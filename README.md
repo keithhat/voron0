@@ -12,6 +12,7 @@ Having time again I'd see price bying from siboor directly to choose different c
 * I bought this kit: https://www.aliexpress.com/item/1005005295642824.html
 	* When purchased I got with Drafon HF Hotend and Red ABS parts for AUD 943.02 (with shipping).
 	* As at 2025-05-01 it is: AUD 645.39 with no ABS and TZ-V6-2.0 (if wanted second...)
+* Siboor has a collection of useful links: https://docs.siboor.com/welcome-to-siboor/friendly-links
 
 # Notes
 * Do NOT do full apt upgrade on console.
@@ -37,12 +38,10 @@ Having time again I'd see price bying from siboor directly to choose different c
  * Other Info:
   	* Siboor V0.2 Bom: https://github.com/Lzhikai/SIBOOR-Voron-0.2/blob/main/BOM.md
 	* Root Project from QR Code: https://github.com/Lzhikai/siboor-voron/tree/main/Voron-0.2
+* During assembly I originally missed the rear-right foot with bowden collet and run-out sensor.
+	* This was created from the Siboor screenshot and required hardware in [RearRightFoot.jpg](images/R1_Rear_Right_Foot/RearRightFoot.jpg) (I only used 1 M2x10)
 * The ADX345 accelerometer mounting was eventually found at end of "assembly/4 SIBOOR0.2-supplementary.pdf".
 	* I had previouslly used longer bolts and attempt to mount to front of toolhead.
-* G10 FR4 FibreGlass Sheet (Green PCB Material):
-	* Single Sided Copper: https://www.aliexpress.com/item/1005006103130312.html 	AU 4.39 for 120x180 - I have 20x30 for 9.74
-	* AU 14.19 for 235x235x1.5mm
-
 ## Electrical
 My extruder fan was not originally working. This was tracked to a polarity issue into the fan cable. These cannot be swapped.
 
@@ -82,7 +81,10 @@ This explicitly calls out some sections
 ## Sample Configus
 * Siboor Voron 0.2 Aug: https://github.com/Lzhikai/SIBOOR-Voron-0.2-AUG/blob/main/printer.cfg
 
-## Neopixel LED effects
+## Neopixel
+0.2 Kirigami bed has a neopixel LED that can have effects. This can be used with 2xLED strips as 'Disco on a Stick' with wiring shown at [DaisyChain Neopixel RGBs](images/02_LED_Wiring/Multiple_RGBs.jpg)
+
+### LED effects
 * https://github.com/julianschill/klipper-led_effect
 * https://docs.siboor.com/other-products/led-effect-notes/configuring-the-effects
 * https://docs.siboor.com/other-products/led-effect-notes/advanced-effect-layer-blending
@@ -140,7 +142,7 @@ I bought following:
 # Additional Parts
 ## General
 These can be ued with several of below
-* I bought several stainless steel nozels for different sizes and abrasive materials.:
+* I bought several hardened steel nozels for different sizes and abrasive materials.:
 	* https://www.aliexpress.com/item/1005001620042630.html 	AUD 4.14  	I got pairs on: (0.2, 0.4, 0.6)
 * Drive Gear with Hardended Steel gears - have NOT yet used this for gears (arrived after re-assembling mini Stealthburner)
 	* https://www.aliexpress.com/item/1005007929025658.html 	AU 7.39 	Intended as spare 50T gear and abrasiev filamenets.
@@ -161,11 +163,11 @@ TODO: Need cool zone? Possibly something that can be shared with EnderNG
 
 ## Replacement Hotend
 A cheaper hotend for abrasive seems useful. Also allows using if Dragon blocked.
-TODO: Confirm can use above stainless stell nozzels
+TODO: Confirm can use above hardened steel nozzels
 TODO: Make up as drop-in for Dragon HF; mini stealthburner, then Dragon Burner
 * I later bought a TZ-V6 2.0 Hotend - 35mm3/s
 	* 60W V6: https://www.aliexpress.com/item/1005006417172044.html 	AU35.19. TBC if ok for abrasive.
-		* Nozzle: SKD11, hardness: HRC60 - TBC if takes above V6 stainless stell (this looked smaller.)
+		* Nozzle: SKD11, hardness: HRC60 - TBC if takes above V6 hardened stell (this looked smaller.)
 
 ## Dragon Burner
 The Dragon Burner seems to be better reviewed, especially for PLA. Also would like a filament cutter (for box turtle) and nozzle probe for correct z-offset.
@@ -194,7 +196,13 @@ These maybe used on my Ender3 v2 to NG upgrade instead (for larger build volume)
 * Filament Run-out sensor: https://www.aliexpress.com/item/32917462715.html 	AU 3.35
 * PTFE Tube https://www.aliexpress.com/item/1005004969503645.html 	AU 7.50 for 2m with cutter
 * 10ml 243 Loctite: AUD 4.42
+* G10 FR4 FibreGlass Sheet (Green PCB Material):
+	* Single Sided Copper: https://www.aliexpress.com/item/1005006103130312.html 	AU 4.39 for 120x180 - I have 20x30 for 9.74
+	* AU 14.19 for 235x235x1.5mm
 
+# Interesting parts that may help in future
+ * [NoDropNuts](https://mods.vorondesign.com/details/XGjXJC3VQU76EBYB7Yg) look interesting
+ * [Snap in M3 Nuts for 1515](https://www.printables.com/model/410126-snap-in-m3-nuts-for-makerbeam-xl-1515) - ie for Nevermore
 
 # Future Thoughts
 These are tracked in [Future.md](future.md)
