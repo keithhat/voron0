@@ -58,7 +58,13 @@ This is a backlog of tasks I'd like to improve. It was started after initial mec
 * Door handle fix - I'm ok to screw through front panel
   * Randome link: https://mods.vorondesign.com/details/mbzWlsb9PXA54FhWXtRCQ
 * Add panels for dust etc
+* Belt Tesnsion checking
+  * https://github.com/Diyshift/3D-Printer/tree/main/GT2%20Belt%20Tension%20Meter
+    * Need Spring and Piano wiring for correction tension
+    * Video of demo: https://www.youtube.com/watch?v=AmgCqy7FisE
+    * Link has tension guidlines: 1.9 for Voron 0. When printhead centered (and motors active)
 
+## MVP Completion
 * Look at process to apply for serial.
 
 ## Stretch
@@ -99,7 +105,14 @@ This is a backlog of tasks I'd like to improve. It was started after initial mec
     * This looks simple/cheap - doesn't allow for different beds though: https://github.com/Polar-Ted/STL-Files/tree/main/V0.1_Its_Not_a_Sexbolt_switch
         * Video is at: https://www.youtube.com/watch?v=bdxmqTDDsMM
     * Expect some options especially if change to DragonBurner - this would allow for differnt beds too.
-    * There are now lots of new options possibly for autoo bed levelling too - Klacky, integrated into hotend, cartographer probing
+    * There are now lots of new options possibly for bed leveling/mesh:
+      * Beacon/Cartographer (original)
+      * Eddy
+      * Tap -> Moves entire toolhead so less rigid; BUT has both bed and nozzle.
+      * Klacky? - look at
+        - Unsure of nap that nozzle pushed on button next to bed. If this then one it picks up probe temporarily
+      * BLTough ? unsure if still useful
+
 * Ensure idler cam locks work well with printer hat
 * Check toolhead is ok with PLA, may need better cooling. Think Dragon Burner useful and helps with some other options (filament cutter, maybe probe)
     * Can explore other options including CAM controlled for more flexible cambling
