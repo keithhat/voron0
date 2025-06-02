@@ -9,10 +9,9 @@ This is a backlog of tasks I'd like to improve. It was started after initial mec
 * Calibration Prints
   * cube https://docs.siboor.com/siboor-0.2-r1-aug/the-build/slicer-setup#slice-the-3d-model
   * Initial observations:
-      * See if can look at homing; seems to need to be homed to start print but then starts homing again...
-        * MAYVE Don't need. Noticed first time but this was good for reprinting the same job
       * First layer indicated some issues with oozing; at leat the white filament. Moving from purge line; and first layer
         * Think this is mainly retraction; think a stringing test to help set
+      * >>> Have seen layer shits; not always reproduced so see if cause <<< Belt tension, speed etc
       * Klipper console log showed some details - unknown command:
         * Unknown Command:
         *   EXCLUDE_OBJECT_DEFINE - at start
@@ -20,7 +19,11 @@ This is a backlog of tasks I'd like to improve. It was started after initial mec
         *   EXCLUDE_OBJECT_END 0 lost of pairs
         * Popup at end of Job: Move out of Range: 230 230 36 [7355.028]
       * Some lines shown; seem consistent (for same job); are around end of z etc so maybe not just fixed x cm issues.
+      * Annoying; sometimes fails saying neded to home first (after pre-heats bed)
+        * This MAYBE intermittent?
   * Assume Will Need:
+    * Look for a spool holder incase caused layer shifts - MAYVE poorly mounted originally (using E3 for now)
+    * Look at flow rates for material - load filament FAST for ABS resulted in skips towards the end
     * Temperature Tower
     * Retraction Distance - Is this related to oozing??
     * First Layer??
@@ -58,6 +61,7 @@ This is a backlog of tasks I'd like to improve. It was started after initial mec
 * Door handle fix - I'm ok to screw through front panel
   * Randome link: https://mods.vorondesign.com/details/mbzWlsb9PXA54FhWXtRCQ
 * Add panels for dust etc
+* MAYBE a nozzle cleaner? Lots of ozzing atm. Especially want if using nozzle probe
 * Belt Tesnsion checking
   * https://github.com/Diyshift/3D-Printer/tree/main/GT2%20Belt%20Tension%20Meter
     * Need Spring and Piano wiring for correction tension
